@@ -36,7 +36,6 @@ logs/
 Thumbs.db
 desktop.ini
 
-# --- Database (Тимчасові файли баз даних) ---
 *.sqlite
 *.db
 /backend/data/
