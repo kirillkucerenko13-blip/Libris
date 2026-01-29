@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Catalog - Libris</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="css/catalog.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo-section">
+                <svg class="book-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                </svg>
+                <span class="site-name">Libris</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="catalog.html" class="active">Catalog</a></li>
+            </ul>
+            <div class="nav-icons">
+                <button class="icon-btn" aria-label="Account" onclick="window.location.href='account.html'">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </button>
+                <button class="icon-btn" aria-label="Cart" onclick="window.location.href='cart.html'">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span class="cart-badge">0</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+    <section class="catalog-header">
+        <div class="catalog-header-content">
+            <h1 class="catalog-title">Book Catalog</h1>
+            <p class="catalog-subtitle">Browse our complete collection of books</p>
+            <div class="search-sort-bar">
+                <div class="search-container">
+                    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="text" class="search-input" id="searchInput" placeholder="Search books or authors...">
+                </div>
+                <div class="sort-dropdown" id="sortDropdown">
+                    <button class="sort-button" id="sortButton">
+                        <span id="sortLabel">Sort by Title</span>
+                        <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="m6 9 6 6 6-6"/>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu">
+                        <button class="active" data-sort="title">Sort by Title</button>
+                        <button data-sort="price-low">Price: Low to High</button>
+                        <button data-sort="price-high">Price: High to Low</button>
+                        <button data-sort="rating">Highest Rated</button>
+                    </div>
+                </div>
+            </div>
+            <div class="category-filters">
+                <button class="category-btn active" data-category="all">All</button>
+                <button class="category-btn" data-category="fiction">Fiction</button>
+                <button class="category-btn" data-category="historical">Historical Fiction</button>
+                <button class="category-btn" data-category="contemporary">Contemporary</button>
+                <button class="category-btn" data-category="self-help">Self-Help</button>
+                <button class="category-btn" data-category="short-stories">Short Stories</button>
+                <button class="category-btn" data-category="philosophy">Philosophy</button>
+                <button class="category-btn" data-category="mystery">Mystery</button>
+                <button class="category-btn" data-category="cooking">Cooking</button>
+                <button class="category-btn" data-category="technology">Technology</button>
+                <button class="category-btn" data-category="poetry">Poetry</button>
+            </div>
+        </div>
+    </section>
+    <section class="books-section">
+        <p class="results-count" id="resultsCount">Showing 12 books</p>
+        <div class="book-grid" id="booksGrid">
+        </div>
+    </section>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                    </svg>
+                    <span>Libris</span>
+                </div>
+                <p class="footer-description">Your cozy corner for discovering beautiful books and timeless stories.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Shop</h3>
+                <ul class="footer-links">
+                    <li><a href="#">All Books</a></li>
+                    <li><a href="#">New Releases</a></li>
+                    <li><a href="#">Bestsellers</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Shipping Info</a></li>
+                    <li><a href="#">Returns</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul class="footer-links">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Libris. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="js/catalog.js"></script>
+</body>
+</html>
